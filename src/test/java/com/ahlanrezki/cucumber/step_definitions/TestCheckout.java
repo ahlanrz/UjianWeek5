@@ -27,13 +27,13 @@ public class TestCheckout {
 
     @And("User input firstname lastname")
     public void user_typing_firstname_lastname() {
-        checkoutProduct.name("Mohammad", "Zakaria Yusri");
+        checkoutProduct.name("Ahlan", "Rezki");
         extentTest.log(LogStatus.PASS,"User typing firstname lastname");
     }
 
     @And("User input company name just optional")
     public void user_typing_company_name_just_optional() {
-        checkoutProduct.companyName("");
+        checkoutProduct.companyName("DIKA");
         extentTest.log(LogStatus.PASS,"User typing company name");
     }
 
@@ -45,19 +45,19 @@ public class TestCheckout {
 
     @And("User input address one")
     public void user_typing_address_one() {
-        checkoutProduct.addressOne("Jl.bukit kencana 3");
+        checkoutProduct.addressOne("Jl.Gang Senggol");
         extentTest.log(LogStatus.PASS,"User typing address one");
     }
 
     @And("User input address two just optional")
     public void user_typing_address_two_just_optional() {
-        checkoutProduct.addressTwo("");
+        checkoutProduct.addressTwo("-");
         extentTest.log(LogStatus.PASS,"User typing address two");
     }
 
     @And("User input city")
     public void user_typing_city() {
-        checkoutProduct.city("Bekasi");
+        checkoutProduct.city("Jakarta Timur");
         extentTest.log(LogStatus.PASS,"User typing city");
     }
 
@@ -69,13 +69,13 @@ public class TestCheckout {
 
     @And("User input postcode")
     public void user_typing_postcode() {
-        checkoutProduct.postcode("17414");
+        checkoutProduct.postcode("13420");
         extentTest.log(LogStatus.PASS,"User typing postcode");
     }
 
     @And("User typing phone number")
     public void user_typing_phone_number() {
-        checkoutProduct.phoneNumber("08321987654");
+        checkoutProduct.phoneNumber("087713456789");
         extentTest.log(LogStatus.PASS,"User typing phone number");
     }
 
