@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
                 "src/main/resources/features/03.AddtoCart.feature",
                 "src/main/resources/features/04.CheckoutProduct.feature",
         },
-        glue = "com.juaracoding.cucumber.step_definitions",
+        glue = "com.ahlanrezki.cucumber.step_definitions",
         plugin = {"pretty","html:target/cucumber-reports.html","json:target/cucumber.json"})
 public class RunnerTest extends AbstractTestNGCucumberTests {
 

@@ -1,7 +1,6 @@
 package com.ahlanrezki.cucumber.step_definitions.pages;
 
 import com.ahlanrezki.cucumber.step_definitions.drivers.DriverSingleton;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,48 +20,43 @@ public class LoginPage {
     WebElement clickdismiss;
 
     @FindBy(xpath = "//a[normalize-space()='My Account']")
-    WebElement linkmyaccount;
+    WebElement clickmyaccount;
 
     @FindBy(xpath = "//input[@id='username']")
-    WebElement usernameLogin;
+    WebElement username;
 
     @FindBy(xpath = "//input[@id='password']")
-    WebElement usernamePassword;
+    WebElement Password;
 
-    @FindBy(xpath = "//*[@id=\"customer_login\"]/div[1]/form/p[2]/span/span")
-    WebElement showPassword;
-
+    @FindBy(xpath = "//strong[normalize-space()='ERROR']")
+    WebElement txtAlertError;
 
     @FindBy(xpath = "//*[@id=\"customer_login\"]/div[1]/form/p[3]/button")
     WebElement btnLogin;
 
-    public void loginPageDismiss() {
-        clickdismiss.click();
-    }
+    @FindBy(xpath = "/html/body/div[1]/div[2]/main/article/div/div/div/p[1]/strong[1]")
+    WebElement loginSuccess;
 
-    public void loginPageMyaccount() {
-        linkmyaccount.click();
+    public void loginPage() {
+        clickdismiss.click();
+        clickmyaccount.click();
     }
 
     public void loginForm(String email, String password) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        js.executeScript("window.scrollBy(0,500)");
-        delay(detik);
-        this.usernameLogin.sendKeys(email);
-        delay(detik);
-        this.usernamePassword.sendKeys(password);
-        delay(detik);
-        showPassword.click();
-        delay(detik);
-        btnLogin.click();
-        delay(detik);
+        this.username.sendKeys(email);
+        this.Password.sendKeys(password);
     }
 
     public void clickBtnLogin() {
         delay(detik);
         btnLogin.click();
-        delay(detik);
+    }
+
+    public String getTxtMessageError() {
+        return txtAlertError.getText();
+    }
+    public String getTxtMyAccount() {
+        return loginSuccess.getText();
     }
 
     static void delay(int detik) {
